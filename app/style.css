@@ -1,0 +1,47 @@
+html, body { margin: 0; min-height: 100%; background: #14121a; color: #f2f0f4; font: 15px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif; }
+.top { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: space-between; padding: 18px 24px; background: linear-gradient(90deg, #2b0f3f, #c22e6e 55%, #ff7a18); }
+.top h1 { margin: 0; font-size: 26px; letter-spacing: 0.5px; }
+.top p { margin: 4px 0 0; color: #ffe9d6; }
+.steps { display: flex; gap: 10px; list-style: none; margin: 0; padding: 0; }
+.steps li { background: rgba(0, 0, 0, 0.35); border-radius: 999px; padding: 6px 12px; font-weight: 700; white-space: nowrap; }
+.steps b { display: inline-block; width: 20px; height: 20px; line-height: 20px; text-align: center; border-radius: 50%; background: #ffd94d; color: #241a05; margin-right: 6px; }
+.studio { display: flex; flex-wrap: wrap; gap: 20px; padding: 20px 24px 32px; align-items: flex-start; }
+.column { flex: 1 1 420px; display: flex; flex-direction: column; gap: 20px; min-width: 340px; }
+.preview-col { flex: 1 1 480px; }
+.panel { background: #1e1b28; border: 1px solid #34304a; border-radius: 12px; padding: 18px; }
+.panel h2 { margin: 0 0 12px; font-size: 19px; }
+.panel h3 { margin: 16px 0 8px; font-size: 14px; text-transform: uppercase; letter-spacing: 0.08em; color: #c9c4d1; }
+.step-num { display: inline-block; width: 24px; height: 24px; line-height: 24px; text-align: center; border-radius: 50%; background: #ff2e88; color: #fff; font-size: 14px; margin-right: 8px; }
+.hint { margin: 0 0 12px; color: #b7b2c4; }
+.slots { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 14px; }
+.slot { background: #262233; border: 2px solid #3a3450; border-radius: 10px; padding: 8px; cursor: pointer; }
+.slot.selected { border-color: #ffd94d; }
+.slot.drop { border-color: #00e5ff; }
+.slot canvas { width: 100%; height: auto; display: block; border-radius: 6px; background: #14121a; }
+.slot-meta { display: flex; flex-direction: column; margin: 8px 0 6px; }
+.slot-meta strong { font-size: 13px; }
+.slot-meta span { font-size: 11px; color: #b7b2c4; letter-spacing: 0.05em; }
+.slot-actions { display: flex; gap: 6px; }
+.mini { flex: 1; font: inherit; font-size: 12px; font-weight: 700; padding: 6px 4px; border: 1px solid #4a4462; border-radius: 6px; background: #2e2a3f; color: #f2f0f4; cursor: pointer; }
+label { display: flex; flex-direction: column; gap: 5px; font-weight: 600; font-size: 13px; margin-bottom: 10px; }
+input[type=text] { font: inherit; font-weight: 400; padding: 9px 10px; border: 1px solid #4a4462; border-radius: 7px; background: #14121a; color: #f2f0f4; }
+input[type=range] { width: 100%; accent-color: #ff2e88; }
+button { font: inherit; cursor: pointer; }
+.primary { font-weight: 800; padding: 12px 16px; border: 0; border-radius: 8px; background: #ffd94d; color: #241a05; }
+.pick { font-weight: 700; padding: 8px 12px; border: 1px solid #4a4462; border-radius: 999px; background: #2e2a3f; color: #f2f0f4; }
+.pick.on { background: #ff2e88; border-color: #ff2e88; color: #fff; }
+.picks { display: flex; flex-wrap: wrap; gap: 8px; }
+.preview-wrap { display: flex; justify-content: center; background: #0e0c13; border-radius: 10px; padding: 14px; }
+#poster { max-width: 100%; height: auto; box-shadow: 0 10px 34px rgba(0, 0, 0, 0.55); cursor: pointer; }
+.export-row { display: flex; gap: 10px; margin-top: 14px; flex-wrap: wrap; }
+.export-row .primary { flex: 1; }
+#status { min-height: 20px; margin: 12px 0 0; color: #9fe8a8; }
+button:disabled { opacity: 0.4; cursor: default; }
+body.shot-cover .top, body.shot-cover .column:not(.preview-col) { display: none; }
+body.shot-cover { background: #000; }
+body.shot-cover .studio { padding: 0; }
+body.shot-cover .preview-col { flex: 1 1 100%; }
+body.shot-cover .preview-col .panel { background: transparent; border: 0; padding: 0; border-radius: 0; }
+body.shot-cover .preview-col .panel h2, body.shot-cover .export-row, body.shot-cover #status, body.shot-cover .panel[aria-label="Panel editor"] { display: none; }
+body.shot-cover .preview-wrap { background: transparent; padding: 0; border-radius: 0; }
+body.shot-cover #poster { width: 100vw; height: 100vh; max-width: none; box-shadow: none; }

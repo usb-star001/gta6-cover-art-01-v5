@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leonida Nights Cover Studio</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<header class="top">
+  <div>
+    <h1>Leonida Nights Cover Studio</h1>
+    <p>Your photos, your crew, one sunset poster — exported as a PNG.</p>
+  </div>
+  <ol class="steps">
+    <li><b>1</b> Add photos</li>
+    <li><b>2</b> Caption</li>
+    <li><b>3</b> Export PNG</li>
+  </ol>
+</header>
+<main class="studio">
+  <section class="column">
+    <section class="panel" aria-label="Step 1: add photos">
+      <h2><span class="step-num">1</span> Add photos</h2>
+      <p class="hint">Click a slot to upload a photo, drag a file onto a slot, or paste an image. Eight slots, one crew.</p>
+      <div id="slots" class="slots"></div>
+      <button id="try-samples" type="button" class="primary">Try samples — load the demo cast</button>
+      <input id="file-input" type="file" accept="image/*" hidden>
+    </section>
+    <section class="panel" aria-label="Step 2: caption">
+      <h2><span class="step-num">2</span> Caption</h2>
+      <label>Title <input type="text" data-caption="title" maxlength="24"></label>
+      <label>Subtitle <input type="text" data-caption="subtitle" maxlength="60"></label>
+      <label>Ribbon <input type="text" data-caption="ribbon" maxlength="60"></label>
+      <label>Review quote <input type="text" data-caption="quote" maxlength="60"></label>
+      <label>Quote source <input type="text" data-caption="quoteSource" maxlength="40"></label>
+      <label>Billing <input type="text" data-caption="billing" maxlength="80"></label>
+      <label>Release line <input type="text" data-caption="release" maxlength="24"></label>
+      <label>Edition <input type="text" data-caption="edition" maxlength="12"></label>
+      <h3>Layout</h3>
+      <div id="layouts" class="picks"></div>
+      <h3>Colour grade</h3>
+      <div id="grades" class="picks"></div>
+      <h3>Ratio</h3>
+      <div id="ratios" class="picks"></div>
+    </section>
+  </section>
+  <section class="column preview-col">
+    <section class="panel" aria-label="Step 3: export">
+      <h2><span class="step-num">3</span> Export PNG</h2>
+      <div class="preview-wrap">
+        <canvas id="poster" width="540" height="675" aria-label="Live poster preview"></canvas>
+      </div>
+      <div class="export-row">
+        <button id="export-all" type="button" class="primary">Export all 3 PNGs</button>
+        <button id="export-one" type="button">Export this ratio</button>
+      </div>
+      <p id="status" role="status"></p>
+    </section>
+    <section class="panel" aria-label="Panel editor">
+      <h2>Panel</h2>
+      <p id="panel-label" class="hint">VIC — THE BOSS</p>
+      <label>Zoom <span id="zoom-val">100%</span>
+        <input id="zoom" type="range" min="1" max="2" step="0.05" value="1">
+      </label>
+      <label>Pan left–right <input id="pan-x" type="range" min="-1" max="1" step="0.05" value="0"></label>
+      <label>Pan up–down <input id="pan-y" type="range" min="-1" max="1" step="0.05" value="0"></label>
+      <div class="export-row">
+        <button id="flip" type="button" class="pick">Flip</button>
+        <button id="swap-left" type="button" class="pick">Swap left</button>
+        <button id="swap-right" type="button" class="pick">Swap right</button>
+      </div>
+      <div class="export-row">
+        <button id="undo" type="button" class="pick">Undo</button>
+        <button id="redo" type="button" class="pick">Redo</button>
+      </div>
+    </section>
+  </section>
+</main>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
